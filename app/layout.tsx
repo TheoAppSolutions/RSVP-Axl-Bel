@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { MusicProvider } from "@/components/music-player";
 import { wedding } from "@/lib/event";
 import "./globals.css";
 
@@ -39,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <MusicProvider>{children}</MusicProvider>
+        {children}
       </body>
     </html>
   );

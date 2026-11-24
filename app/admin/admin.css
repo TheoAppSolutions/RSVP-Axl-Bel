@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Keep the template dashboard's palette and resets inside its own route. */
+#rsvp-admin {
+  --dusty-50: 244 247 250;
+  --dusty-100: 230 237 243;
+  --dusty-200: 207 220 231;
+  --dusty-300: 176 198 216;
+  --dusty-400: 143 170 192;
+  --dusty-500: 113 146 172;
+  --dusty-600: 90 122 148;
+  --dusty-700: 71 98 121;
+  --dusty-800: 54 75 93;
+  --dusty-900: 38 54 68;
+  --dusty-950: 20 32 42;
+  color: rgb(var(--dusty-900));
+  font-family: var(--font-utility);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#rsvp-admin *,
+#rsvp-admin ::before,
+#rsvp-admin ::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+#rsvp-admin :where(h1, h2, p) { margin: 0; }
+#rsvp-admin :where(h1, h2) { font-size: inherit; font-weight: inherit; }
+#rsvp-admin :where(button, input, select) {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+#rsvp-admin button { cursor: pointer; background: transparent; }
+#rsvp-admin button:disabled { cursor: default; }
+#rsvp-admin input::placeholder { opacity: 1; }
+#rsvp-admin svg { display: block; vertical-align: middle; }
+#rsvp-admin table { border-collapse: collapse; border-color: inherit; text-indent: 0; }

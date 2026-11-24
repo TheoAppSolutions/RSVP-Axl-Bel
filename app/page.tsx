@@ -1,8 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Countdown } from "@/components/countdown";
 import { Gallery } from "@/components/gallery";
 import { LeafDivider, Monogram } from "@/components/monogram";
-import { HeroMusicButton } from "@/components/music-player";
+import { HeroMusicButton, MusicProvider } from "@/components/music-player";
 import { PageEffects } from "@/components/page-effects";
 import { wedding } from "@/lib/event";
 
@@ -16,7 +17,7 @@ const attireColors = [
 
 export default function HomePage() {
   return (
-    <>
+    <MusicProvider>
       <PageEffects />
 
       <div className="ribbon">
@@ -153,13 +154,12 @@ export default function HomePage() {
           <p className="eyebrow eyebrow-light">Kindly Respond By {wedding.rsvpDeadline}</p>
           <h2 className="section-title section-title-light" id="rsvp-title">We Hope You Can Celebrate With Us</h2>
           <p className="rsvp-copy">
-            Please let us know if you&apos;ll be joining us on our special day by
-            confirming your attendance through the form below.
+            View and manage guest responses on the admin page.
           </p>
-          <a href={wedding.rsvpUrl} target="_blank" rel="noopener noreferrer" className="btn btn-solid" id="rsvpButton">
-            Confirm Your Attendance
-          </a>
-          <p className="rsvp-note">You&apos;ll be taken to our RSVP form in a new tab.</p>
+          <Link href="/admin" className="btn btn-solid" id="rsvpButton">
+            Go to Admin Page
+          </Link>
+          <p className="rsvp-note">Sign in to view RSVP responses.</p>
         </section>
       </main>
 
@@ -168,6 +168,6 @@ export default function HomePage() {
         <p>With love, {wedding.couple}</p>
         <p className="footer-date">{wedding.footerDate}</p>
       </footer>
-    </>
+    </MusicProvider>
   );
 }
